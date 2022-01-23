@@ -1,14 +1,14 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_complete_guide/models/transaction.dart';
 import './chart_bar.dart';
 import '../models/Transaction.dart';
 import 'package:intl/intl.dart';
 
 class Chart extends StatelessWidget {
-  //const Chart({ Key? key }) : super(key: key);
+  final List resentTransactions;
+  const Chart(recentTransactions, {Key key, this.resentTransactions})
+      : super(key: key);
 
-  final List<Transaction> resentTransactions;
-
-  Chart(this.resentTransactions);
   List<Map<String, Object>> get groupedTransactionsValues {
     return List.generate(7, (index) {
       final weekDay = DateTime.now().subtract(
